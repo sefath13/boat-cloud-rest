@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project - Sefath Khan</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+  </head>
+  <body>
+    {% if session %}
+    <div class="user-info">
+      <h1>Welcome, {{session.userinfo.nickname}}!</h1>
+      <p>Here is your user information:</p>
+          <table>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+            </tr>
+
+            <tr>
+              <td>name</td>
+              <td>{{session.userinfo.name}}</td>
+            </tr>
+            <tr>
+                <td>nickname</td>
+                <td>{{session.userinfo.nickname}}</td>
+            </tr>
+            <tr>
+              <td>email</td>
+              <td>{{session.userinfo.email}}</td>
+              </tr>
+            <tr>
+                <td>JWT or id_token</td>
+                <td class="problem-category"><span>{{session.id_token}}</span></td>
+            </tr>
+            <tr>
+              <td>User ID</td>
+              <td>{{session.userinfo.sub}}</td>
+            </tr>
+        </table>
+      <a href="/logout" class="logout-button">Logout</a>
+  </div>
+    {% else %}
+        <div class="welcome-container">
+        <h1>Welcome!</h1>
+        <p>Click the button below to login and obtain your JSON Web Token (JWT).</p>
+        <a href="/login" class="login-button">Log In</a>
+        </div>
+    {% endif %}
+  </body>
+</html>
