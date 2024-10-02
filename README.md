@@ -3,8 +3,6 @@ _A Flask web application that implements a RESTful API for Boat and Load entitie
 ____
 **Fall 2023 OSU CS493 Cloud Application Development Portfolio Project**
 
-Here is a [demo](https://khanse-project.wn.r.appspot.com)!
-
 ### Features:
 - REST API that uses proper resource based URLs, pagination and status codes.
 - System to create user accounts for authentication and authorization.
